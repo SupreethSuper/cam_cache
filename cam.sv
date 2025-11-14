@@ -32,10 +32,15 @@ module cam
 //--------------------------------------------------------------------------------------
    );
 
+<<<<<<< HEAD
    `include "cam_params.vh"
  
 
 logic [5:0] INDEX [0:INDEX_SIZE-1];
+=======
+    `include "cam_params.vh"
+
+>>>>>>> ef81c50a49672289e662a1a1b043a3697a83b61a
 
 
    logic [BITS-1:0]   data_mem[0:WORDS-1]; // data memory
@@ -59,7 +64,11 @@ logic [5:0] INDEX [0:INDEX_SIZE-1];
       end
       else begin
         //now checking if write_ == 0, cause condition executing at !write_, which means that !write_ =1, which means that write_ = 0
+<<<<<<< HEAD
         if(!write_) begin
+=======
+        if(write_) begin
+>>>>>>> ef81c50a49672289e662a1a1b043a3697a83b61a
 
           data_mem[ w_addr ] <= wdata;
           tag_mem [ w_addr ] <= new_tag;
@@ -80,13 +89,19 @@ logic [5:0] INDEX [0:INDEX_SIZE-1];
             end
 
 
+<<<<<<< HEAD
        end
+=======
+
+      // end
+>>>>>>> ef81c50a49672289e662a1a1b043a3697a83b61a
     
 
 
    end
 
 //I guess this is equlivalent to if(read)
+<<<<<<< HEAD
 // always @(read) begin
 //     found       = 1'b0;
 //     match_index = INDEX[0][ ADDR_LEFT : 0 ]; //change as per announcement
@@ -98,6 +113,19 @@ logic [5:0] INDEX [0:INDEX_SIZE-1];
 //         end
 //     end
 // end
+=======
+always @(read) begin
+    found       = 1'b0;
+    match_index = INDEX[0][ ADDR_LEFT : 0 ]; //change as per announcement
+
+    for (index = 0; index < WORDS; index = index + 1) begin
+        if (val_mem[index] && (tag_mem[index] == new_tag)) begin
+            match_index = INDEX[index][ ADDR_LEFT : 0 ]; //change as per announcement
+            found       = 1'b1;
+        end
+    end
+end
+>>>>>>> ef81c50a49672289e662a1a1b043a3697a83b61a
 
 
 
