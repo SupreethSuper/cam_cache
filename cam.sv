@@ -20,7 +20,7 @@ module cam
    input                      read,        // read signal
    input                      clk,         // system clock
    input                      write_,      // write_ signal
-   input                      rst_         // system reset
+   input                      rst_,         // system reset
    input                      new_valid,   // new valid bit
 //---------------------------------------------------------------------------------
 
@@ -28,11 +28,13 @@ module cam
    input  [TAG_SZ-1:0]        check_tag,   // the tag to match
    input  [ADDR_LEFT:0]       w_addr,      // address to write
    input  [BITS-1:0]          wdata,       // data to write
-   input  [TAG_SZ-1:0]        new_tag,     // the new tag
+   input  [TAG_SZ-1:0]        new_tag     // the new tag
 //--------------------------------------------------------------------------------------
    );
 
-   `include "cam_params.vh"
+    `include "cam_params.vh"
+
+
 
    logic [BITS-1:0]   data_mem[0:WORDS-1]; // data memory
    logic [TAG_SZ-1:0] tag_mem[0:WORDS-1];  // tag memory
@@ -47,19 +49,20 @@ module cam
     
     if(!rst_) begin
       //all the mems set to 0
-      for(index < 0; index < WORDS; index = index + 1) begin
+      for(index = 0; index < WORDS; index ++) begin
         data_mem[ index ] <= { BITS { 1'b0 } };
         tag_mem [ index ] <= { BITS { 1'b0 } };
         val_mem [ index ] <= { BITS { 1'b0 } };
+         end
       end
-
       else begin
         //now checking if write_ == 0, cause condition executing at !write_, which means that !write_ =1, which means that write_ = 0
-        if(write_)
+        if(write_) begin
 
           data_mem[ w_addr ] <= wdata;
           tag_mem [ w_addr ] <= new_tag;
           val_mem [ w_addr ] <= new_valid;
+        end
       end
       //if not the write_, then its the read, and using if, cause not taking the risk of using if else
       // if(read) begin
@@ -68,7 +71,7 @@ module cam
 
 
       // end
-    end
+    
 
 
    end
@@ -76,11 +79,11 @@ module cam
 //I guess this is equlivalent to if(read)
 always @(read) begin
     found       = 1'b0;
-    match_index = INDEX[0];
+    match_index = INDEX[0][ ADDR_LEFT : 0 ]; //change as per announcement
 
     for (index = 0; index < WORDS; index = index + 1) begin
-        if (val_mem[index] && (tag_mem[index] == input_tag)) begin
-            match_index = INDEX[index];
+        if (val_mem[index] && (tag_mem[index] == new_tag)) begin
+            match_index = INDEX[index][ ADDR_LEFT : 0 ]; //change as per announcement
             found       = 1'b1;
         end
     end
