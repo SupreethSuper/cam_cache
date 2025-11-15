@@ -1,0 +1,299 @@
+$date
+	Fri Nov 14 16:55:40 2025
+$end
+
+$version
+	Synopsys VCS version T-2022.06-SP2-1_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 90f3f13927701272 $end
+
+
+$scope module top_cam $end
+$var reg 8 ! data [7:0] $end
+$var reg 1 " found_it $end
+$var reg 8 # new_tag [7:0] $end
+$var reg 8 $ check_tag [7:0] $end
+$var reg 1 % rst_ $end
+$var reg 1 & clk $end
+$var reg 3 ' w_addr [2:0] $end
+$var reg 8 ( wdata [7:0] $end
+$var reg 1 ) read $end
+$var reg 1 * write_ $end
+$var reg 1 + new_valid $end
+$var reg 8 , tag_0 [7:0] $end
+$var reg 8 - tag_1 [7:0] $end
+$var reg 8 . tag_2 [7:0] $end
+$var reg 8 / tag_3 [7:0] $end
+$var reg 8 0 tag_4 [7:0] $end
+$var reg 8 1 tag_5 [7:0] $end
+$var reg 8 2 tag_6 [7:0] $end
+$var reg 8 3 tag_7 [7:0] $end
+$var reg 8 4 data_0 [7:0] $end
+$var reg 8 5 data_1 [7:0] $end
+$var reg 8 6 data_2 [7:0] $end
+$var reg 8 7 data_3 [7:0] $end
+$var reg 8 8 data_4 [7:0] $end
+$var reg 8 9 data_5 [7:0] $end
+$var reg 8 : data_6 [7:0] $end
+$var reg 8 ; data_7 [7:0] $end
+$var reg 1 < val_0 $end
+$var reg 1 = val_1 $end
+$var reg 1 > val_2 $end
+$var reg 1 ? val_3 $end
+$var reg 1 @ val_4 $end
+$var reg 1 A val_5 $end
+$var reg 1 B val_6 $end
+$var reg 1 C val_7 $end
+
+$scope module cam $end
+$var reg 8 D val_mem [7:0] $end
+$var reg 8 E data [7:0] $end
+$var reg 1 F found_it $end
+$var wire 1 G read $end
+$var wire 1 H clk $end
+$var wire 1 I write_ $end
+$var wire 1 J rst_ $end
+$var wire 1 K new_valid $end
+$var wire 8 L check_tag [7:0] $end
+$var wire 3 M w_addr [2:0] $end
+$var wire 8 N wdata [7:0] $end
+$var wire 8 O new_tag [7:0] $end
+$var integer 32 P index $end
+$var reg 3 Q match_index [2:0] $end
+$var reg 1 R found $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+xF
+1K
+0G
+0J
+1I
+0&
+xR
+x"
+1+
+0)
+0%
+xC
+xB
+xA
+x@
+x?
+x>
+x=
+x<
+1*
+b00000000 L
+bxxxxxxxx E
+b00000001 O
+b000 M
+b00000000 N
+b00000000 $
+bxxxxxxxx !
+b00000000 4
+b00000000 5
+b00000000 6
+b00000000 7
+b00000000 8
+b00000000 9
+b00000000 :
+b00000000 ;
+b00000000000000000000000000001000 P
+bxxx Q
+b00000001 #
+b00000000 ,
+b00000000 -
+b00000000 .
+b00000000 /
+b00000000 0
+b00000000 1
+b00000000 2
+b00000000 3
+b00000000 D
+b000 '
+b00000000 (
+0H
+$end
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+#10
+0*
+0I
+b00000101 #
+b00000101 O
+b00010001 (
+b00010001 N
+b001 '
+b001 M
+1%
+1J
+#20
+1&
+1H
+b00010001 5
+b00000101 -
+b00000010 D
+1=
+#30
+0&
+0H
+b00000110 #
+b00000110 O
+b00010011 (
+b00010011 N
+b011 '
+b011 M
+#40
+1&
+1H
+b00010011 7
+b00000110 /
+b00001010 D
+1?
+#50
+0&
+0H
+b00000000 #
+b00000000 O
+b00010101 (
+b00010101 N
+b101 '
+b101 M
+#60
+1&
+1H
+b00010101 9
+b00101010 D
+1A
+#70
+0&
+0H
+b00000100 #
+b00000100 O
+b00010110 (
+b00010110 N
+b110 '
+b110 M
+#80
+1&
+1H
+b00010110 :
+b00000100 2
+b01101010 D
+1B
+#90
+0&
+0H
+b00001001 #
+b00001001 O
+b00010111 (
+b00010111 N
+b111 '
+b111 M
+#100
+1&
+1H
+b00010111 ;
+b00001001 3
+b11101010 D
+1C
+#110
+0&
+0H
+1*
+1I
+1)
+1G
+0+
+0K
+b00000000 #
+b00000000 O
+b00000000 (
+b00000000 N
+b000 '
+b000 M
+#120
+1&
+1H
+1R
+1F
+1"
+b101 Q
+b00010101 E
+b00010101 !
+#130
+0&
+0H
+b00000101 $
+b00000101 L
+#140
+1&
+1H
+#150
+0&
+0H
+b00000110 $
+b00000110 L
+#160
+1&
+1H
+#170
+0&
+0H
+b00000111 $
+b00000111 L
+#180
+1&
+1H
+#190
+0&
+0H
+b00000000 $
+b00000000 L
+#200
+1&
+1H
+#210
+0&
+0H
+b00000100 $
+b00000100 L
+#220
+1&
+1H
+#230
+0&
+0H
+b00001001 $
+b00001001 L
+#240
+1&
+1H
+#250
+0&
+0H
+b00000001 $
+b00000001 L
+#260
+1&
+1H
+#270
+0&
+0H
